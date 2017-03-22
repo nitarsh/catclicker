@@ -21,23 +21,59 @@
     </header>
 
     <div class="container">
-        <div class="score-container">
-            <p>The score: <span id="score">0</span></p>
+        <div class="cat-picker">
+            <select>
+                <option value="1" selected="">Cat 1</option>
+                <option value="2">Cat 2</option>
+                <option value="3">Cat 3</option>
+                <option value="4">Cat 4</option>
+                <option value="5">Cat 5</option>
+            </select>
         </div>
 
-        <div class="pictures">
-            <img src="cat1.jpg" class="catpic" alt="Cat 1" onclick="catclick()">
-
-            <img src="cat2.jpg" class="catpic" alt="Cat 2" onclick="catclick()">
+        <div class="cat-info">
+            <div class="name-container">
+                <h3 id="name"></h3>
+            </div>
+            <div class="picture-container">
+                <img src="cat1.jpg" id="pic" alt="Cat 1" onclick="catclick()">
+            </div>
+            <div class="score-container">
+                <p>Cat score: <span id="score">0</span></p>
+            </div>
         </div>
-
         <footer>
             <p>Shrinath's version</p>
         </footer>
     </div>
 
     <script>
-        this.score = 0;
+        this.cats = [{
+            name: "Cat 1",
+            src: "cat1.jpg",
+            score: 0
+        }, {
+            name: "Cat 2",
+            src: "cat2.jpg",
+            score: 0
+        }, {
+            name: "Cat 3",
+            src: "cat3.jpg",
+            score: 0
+        }, {
+            name: "Cat 4",
+            src: "cat4.jpg",
+            score: 0
+        }, {
+            name: "Cat 5",
+            src: "cat5.jpg",
+            score: 0
+        }];
+
+        function displayCat(id){
+          id-=1;
+          
+        }
 
         function writescore(score) {
             document.getElementById("score").innerHTML = score;
